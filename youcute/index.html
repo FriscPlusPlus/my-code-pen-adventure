@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset=&quot;UTF-8&quot;>
+  
+<link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
+<meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
+
+<link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
+
+<link rel=&quot;mask-icon&quot; type=&quot;&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg&quot; color=&quot;#111&quot; />
+
+
+  <title>CodePen - Playing with party js and particles js</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'>
+  
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&amp;display=swap');
+
+/*Start of container and background layer, took from here and adapt it to my needs: https://dev.to/selbekk/how-to-overlay-your-background-images-59le*/
+.image-box {
+  position: relative;
+}
+.image-box__background,
+.image-box__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.image-box__background {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 1
+}
+.image-box__overlay {
+  background: rgba(0, 0, 0, 0.6);
+
+  z-index: 2;
+}
+.image-box__content {
+  position: relative;
+
+  z-index: 3;
+  
+  color: white;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*end here*/
+
+button {
+  border: none;
+  background: #34568B;
+  font-size: 1.5rem;
+  color: whitesmoke;
+  height: 2.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+button:hover {
+  cursor: pointer;
+}
+h1 {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.topRight{
+  top: 0;
+  right: 0;
+  position:absolute;
+  z-index: 3;
+}
+
+.icon {
+  width : 1.5rem;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+<body translate=&quot;no&quot; >
+  <div class=&quot;image-box&quot;>
+  <div 
+    class=&quot;image-box__background&quot;
+       id=&quot;particelle&quot;
+  ></div>
+  <div class=&quot;image-box__overlay&quot;></div>
+  <div class=&quot;image-box__content&quot;>
+    <div>
+     <h1 id=&quot;yay&quot; class=&quot;hide&quot;>You are cute ❤️</h1>
+    <button id=&quot;coriandoli&quot;>Press Here 😏</button>
+  </div>
+  </div>
+    <div class=&quot;topRight&quot;>
+      <img class=&quot;icon&quot; src=&quot;https://icons-for-free.com/iconfiles/png/512/part+1+github-1320568339880199515.png&quot; onclick=&quot;window.open('https://github.com/Friscas', '_blank')&quot;>
+      <img class=&quot;icon&quot; src=&quot;https://cdn.icon-icons.com/icons2/2066/PNG/512/instagram_icon_125245.png&quot; onclick=&quot;window.open('https://www.instagram.com/willyilwonka/', '_blank')&quot;>
+    </div>
+</div>
+    <script src=&quot;https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js&quot;></script>
+
+  <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js'></script>
+      <script id=&quot;rendered-js&quot; >
+// Fix the 100vh
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+particlesJS('particelle', {
+  &quot;particles&quot;: {
+    &quot;number&quot;: {
+      &quot;value&quot;: 100,
+      &quot;density&quot;: {
+        &quot;enable&quot;: true,
+        &quot;value_area&quot;: 800 } },
+
+
+    &quot;color&quot;: {
+      &quot;value&quot;: &quot;#080808&quot; },
+
+    &quot;shape&quot;: {
+      &quot;type&quot;: &quot;circle&quot;,
+      &quot;stroke&quot;: {
+        &quot;width&quot;: 0,
+        &quot;color&quot;: &quot;#ffff&quot; },
+
+      &quot;polygon&quot;: {
+        &quot;nb_sides&quot;: 5 },
+
+      &quot;image&quot;: {
+        &quot;src&quot;: &quot;img/github.svg&quot; } },
+
+
+    &quot;opacity&quot;: {
+      &quot;value&quot;: 0.5,
+      &quot;random&quot;: false,
+      &quot;anim&quot;: {
+        &quot;enable&quot;: false,
+        &quot;speed&quot;: 0.5,
+        &quot;opacity_min&quot;: 0.1,
+        &quot;sync&quot;: false } },
+
+
+    &quot;size&quot;: {
+      &quot;value&quot;: 1,
+      &quot;random&quot;: true,
+      &quot;anim&quot;: {
+        &quot;enable&quot;: false,
+        &quot;speed&quot;: 40,
+        &quot;size_min&quot;: 0.1,
+        &quot;sync&quot;: false } },
+
+
+    &quot;line_linked&quot;: {
+      &quot;enable&quot;: true,
+      &quot;distance&quot;: 150,
+      &quot;color&quot;: &quot;#080808&quot;,
+      &quot;opacity&quot;: 0.4,
+      &quot;width&quot;: 1 },
+
+    &quot;move&quot;: {
+      &quot;enable&quot;: true,
+      &quot;speed&quot;: 3,
+      &quot;direction&quot;: &quot;right&quot;,
+      &quot;random&quot;: false,
+      &quot;straight&quot;: false,
+      &quot;out_mode&quot;: &quot;out&quot;,
+      &quot;bounce&quot;: false,
+      &quot;attract&quot;: {
+        &quot;enable&quot;: false,
+        &quot;rotateX&quot;: 600,
+        &quot;rotateY&quot;: 1200 } } },
+
+
+
+  &quot;interactivity&quot;: {
+    &quot;detect_on&quot;: &quot;canvas&quot;,
+    &quot;events&quot;: {
+      &quot;onhover&quot;: {
+        &quot;enable&quot;: true,
+        &quot;mode&quot;: &quot;repulse&quot; },
+
+      &quot;onclick&quot;: {
+        &quot;enable&quot;: true,
+        &quot;mode&quot;: &quot;push&quot; },
+
+      &quot;resize&quot;: true },
+
+    &quot;modes&quot;: {
+      &quot;grab&quot;: {
+        &quot;distance&quot;: 10,
+        &quot;line_linked&quot;: {
+          &quot;opacity&quot;: 1 } },
+
+
+      &quot;bubble&quot;: {
+        &quot;distance&quot;: 10,
+        &quot;size&quot;: 40,
+        &quot;duration&quot;: 2,
+        &quot;opacity&quot;: 8,
+        &quot;speed&quot;: 3 },
+
+      &quot;repulse&quot;: {
+        &quot;distance&quot;: 100,
+        &quot;duration&quot;: 0.4 },
+
+      &quot;push&quot;: {
+        &quot;particles_nb&quot;: 4 },
+
+      &quot;remove&quot;: {
+        &quot;particles_nb&quot;: 2 } } },
+
+
+
+  &quot;retina_detect&quot;: true });
+
+
+
+
+var eButton = document.getElementById('coriandoli'),
+eYay = document.getElementById('yay');
+eButton.addEventListener('click', () => {
+  eButton.style.display = &quot;none&quot;;
+  eYay.style.display = &quot;block&quot;;
+  eYay.classList.add('animate__animated');
+  eYay.classList.add('animate__rubberBand');
+  party.sparkles(eYay, {
+    count: party.variation.range(20, 40) });
+
+});
+
+eYay.addEventListener('animationend', () => {
+  eYay.style.display = &quot;none&quot;;
+  eButton.style.display = &quot;block&quot;;
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
