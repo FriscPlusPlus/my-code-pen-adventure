@@ -1,1 +1,311 @@
-OH HEY, it will come soon
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - I love techno</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css'>
+  
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+/*Start of container and background layer, took from here and adapt it to my needs: https://dev.to/selbekk/how-to-overlay-your-background-images-59le*/
+.image-box {
+  position: relative;
+}
+.image-box__background,
+.image-box__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.image-box__background {
+  background: url("https://github.com/Friscas/my-code-pen-adventure/blob/main/techno/assets/Z8hq12.jpg?raw=true")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 1;
+}
+.image-box__overlay {
+  background: rgba(0, 0, 0, 0.6);
+
+  z-index: 2;
+}
+.image-box__content {
+  position: relative;
+
+  z-index: 3;
+
+  color: white;
+  min-height: 50vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*end here*/
+h1 {
+  text-align: center;
+  font-size: 3.5rem;
+  color: whitesmoke;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+.container h1:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #6495ed;
+}
+
+.topRight {
+  top: 0;
+  right: 0;
+  position: absolute;
+  z-index: 3;
+}
+
+.icon {
+  width: 1.5rem;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+* {
+  font-family: "Ubuntu", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.random_1 {
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  top: 5rem;
+  right: 2.5rem;
+  position: absolute;
+  z-index: 3;
+}
+
+#random_1 {
+  top: 23rem;
+  right: 13.5rem;
+  position: absolute;
+  z-index: 3;
+}
+#random_2 {
+  top: 25rem;
+  left: 13.5rem;
+  position: absolute;
+  z-index: 3;
+}
+#random_3 {
+  bottom: 5rem;
+  right: 15rem;
+  position: absolute;
+  z-index: 3;
+}
+#random_4 {
+  top: 15rem;
+  right: 40%;
+  position: absolute;
+  z-index: 3;
+}
+
+#random_5 {
+  bottom: 9rem;
+  right: 60%;
+  position: absolute;
+  z-index: 3;
+}
+
+.container p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.container ol {
+  list-style: none;
+}
+
+.container a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.container a:hover {
+  color: #6495ed;
+}
+
+.container img {
+  width: 5rem;
+  height: 5rem;
+}
+</style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+  <!-- we need this div for the interaction or else play will not work-->
+<div id="start" class="container">
+  <div>
+    <h1 onclick="StartTheParty()">🔊 Start the techno rave 🔊</h1>
+  </div>
+</div>
+
+<div id="boho_credit" class="hide">
+  <div>
+    <a href="https://makersgonnamake.co/" target="_blank"><h1>VISIT HOBO!</h1></a>
+    <p>Here is where i got the audio from:</p>
+    <ol>
+      <li><a target="_blank" href="https://www.beatport.com/release/push/2021617"><img src="https://www.autektone.com/wp-content/uploads/2019/04/Logo_Beatport-1.png" />By the track here</a></li>
+      <li><img src="https://www.uni-giessen.de/fbz/fb04/institute/geschichte/fachjournalistik/bilder/Logos/YouTube-logo/image_preview" /><a href="https://www.youtube.com/channel/UCMeReINoqj90Zuqqu2FhSzg" target="_blank">HOBO YT channel</a></li>
+      <li><a href="https://www.youtube.com/watch?v=rlicX-Ao7u8" target="_blank"><img src="https://www.uni-giessen.de/fbz/fb04/institute/geschichte/fachjournalistik/bilder/Logos/YouTube-logo/image_preview" /> Video of the audio</a></li>
+      <ol>
+  </div>
+</div>
+
+<div id="techno_container" class="image-box hide">
+  <div id="techno" class="image-box__background animate__animated animate__zoomIn animate__delay-3s"></div>
+  <div class="image-box__overlay"></div>
+  <div class="image-box__content">
+    <h1 id="me" class="animate__animated animate__fadeInRight animate__delay-1s">I</h1>
+    <h1 id="heart" class="animate__animated animate__fadeInUp animate__delay-2s">❤️</h1>
+    <div id="random_6">
+      <div id="dance_floor" class="hide">
+        <img class="animate__animated animate__zoomIn" src="https://i.imgur.com/s73MI6X.gif" />
+        <img class="animate__animated animate__zoomIn" src="https://64.media.tumblr.com/2d595eb503cbb07e66d828d2fec530e0/tumblr_oh0ytxE4rL1vqc713o1_500.gif" />
+        <img class="animate__animated animate__Bounce" src="https://media.tenor.com/images/55f0475f2cf60a1cf6a3880f01ef6399/raw" />
+        <img class="animate__animated animate__Bounce" src="https://i.gifer.com/origin/c8/c8317e96e6a33de10e97e6d836c579aa_w200.gif" />
+      </div>
+    </div>
+  </div>
+
+  <div id="random_1"></div>
+  <div id="random_2"></div>
+  <div id="random_3"></div>
+  <div id="random_4"></div>
+  <div id="random_5"></div>
+
+  <div class="topRight">
+    <img class="icon" src="https://icons-for-free.com/iconfiles/png/512/part+1+github-1320568339880199515.png" onclick="window.open('https://github.com/Friscas', '_blank')">
+    <img class="icon" src="https://cdn.icon-icons.com/icons2/2066/PNG/512/instagram_icon_125245.png" onclick="window.open('https://www.instagram.com/willyilwonka/', '_blank')">
+  </div>
+</div>
+  
+  <script src='https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js'></script>
+      <script id="rendered-js" >
+// Fix the 100vh
+var vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty("--vh", `${vh}px`);
+var techno = new Audio(
+  "https://github.com/Friscas/my-code-pen-adventure/blob/main/techno/assets/ilovetechno.mp3?raw=true",
+  100,
+  true
+);
+var boho = document.getElementById("boho_credit");
+
+var start = document.getElementById("start");
+var technoContainer = document.getElementById("techno_container");
+
+var DanceFloow = document.getElementById("dance_floor");
+
+function StartTheParty() {
+  start.style.display = "none";
+  technoContainer.style.display = "block";
+  boho.style.display = "none";
+  setTimeout(function () {
+    techno.play();
+    random();
+  }, 3000);
+}
+
+function random() {
+  let aIDs = [
+    "random_1",
+    "random_2",
+    "random_3",
+    "random_4",
+    "random_5",
+    "random_6"
+  ];
+  let selectedRandom = document.getElementById(
+    aIDs[Math.floor(Math.random() * aIDs.length)]
+  );
+  setTimeout(function () {
+    party.confetti(
+      selectedRandom,
+      {
+        count: party.variation.range(40, 40)
+      },
+      1
+    );
+    if (!techno.paused) {
+      random();
+    }
+  }, 1000);
+}
+
+let heart = document.getElementById("heart");
+let me = document.getElementById("me");
+
+heart.addEventListener("animationend", () => {
+  heart.style.display = "none";
+  me.style.display = "none";
+  DanceFloow.style.display = "inline";
+});
+
+techno.onended = function () {
+  technoContainer.style.display = "none";
+  boho.style.display = "flex";
+  DanceFloow.style.display = "none";
+  boho.classList.add("container");
+};
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
